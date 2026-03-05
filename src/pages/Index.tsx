@@ -30,7 +30,7 @@ const Index = () => {
           Life Coach &bull; Speaker &bull; Mentor
         </p>
         <h1 className="max-w-2xl text-5xl font-bold leading-tight text-foreground md:text-6xl">
-          Chris Rubongonya
+          Chris Rubongoya
         </h1>
         <p className="mt-6 max-w-lg text-lg text-muted-foreground leading-relaxed">
           Empowering individuals to break barriers, build powerful habits, and
@@ -86,7 +86,7 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} Chris Rubongonya. All rights reserved.
+        &copy; {new Date().getFullYear()} Chris Rubongoya. All rights reserved.
       </footer>
     </div>
   );
