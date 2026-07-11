@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Clock, Sparkles } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Sparkles, Users } from "lucide-react";
 
 const masterclasses = [
   {
@@ -9,6 +9,7 @@ const masterclasses = [
     duration: "8 weeks",
     link: "https://forms.gle/Q5D8eQBB2hxf2LDHA",
     icon: <Sparkles className="h-6 w-6" />,
+    closed: true,
   },
   {
     title: "The Habit Mastery Masterclass",
@@ -18,6 +19,43 @@ const masterclasses = [
     duration: "7 weeks",
     link: "https://forms.gle/afGaqFpXdhBxqj8E7",
     icon: <Calendar className="h-6 w-6" />,
+    closed: true,
+  },
+  {
+    title: "Teens Leadership and Success Masterclass",
+    description:
+      "Transforming Today’s Teens into Tomorrow’s Leaders. The teenage years are among the most important years of life. This practical and life-changing program equips teenagers with the mindset, character, leadership skills, emotional intelligence, communication abilities, and success habits they need to thrive in every area of life. Based on The 7 Habits of Highly Effective Teens, this masterclass helps young people become confident, disciplined, purpose-driven, and prepared for the future.",
+    descriptionDetails: [
+      "Self-confidence and self-esteem",
+      "Discovering purpose and personal strengths",
+      "Leadership and influence",
+      "Goal setting and personal vision",
+      "Effective communication and public speaking",
+      "Time management and self-discipline",
+      "Emotional intelligence",
+      "Building healthy friendships",
+      "Decision-making and problem-solving",
+      "Resisting peer pressure",
+      "Digital responsibility and social media wisdom",
+      "Teamwork and conflict resolution",
+      "Financial responsibility and entrepreneurship basics",
+      "Academic excellence strategies",
+      "Character, integrity, and responsibility",
+    ],
+    audience: [
+      "Teenagers aged 13–19 years",
+      "Secondary & high school students",
+      "Student leaders",
+      "Young entrepreneurs",
+      "Teens preparing for university",
+    ],
+    closing:
+      "Because today’s teenagers become tomorrow’s leaders. Don’t just prepare your child for exams, prepare them for life. Invest in your teenager’s future today!",
+    start: "Open registration",
+    duration: "Flexible",
+    link: "https://forms.gle/Qfb54NysfRQWZzhm8",
+    icon: <Users className="h-6 w-6" />,
+    featured: true,
   },
 ];
 
