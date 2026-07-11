@@ -2,26 +2,6 @@ import { ArrowRight, Calendar, Clock, Sparkles, Users } from "lucide-react";
 
 const masterclasses = [
   {
-    title: "Personal Growth Masterclass",
-    description:
-      "Unlock your full potential and design a life of purpose. This 8-week immersive journey will guide you through self-discovery, mindset shifts, and actionable strategies for lasting transformation.",
-    start: "March 7th, 2026",
-    duration: "8 weeks",
-    link: "https://forms.gle/Q5D8eQBB2hxf2LDHA",
-    icon: <Sparkles className="h-6 w-6" />,
-    closed: true,
-  },
-  {
-    title: "The Habit Mastery Masterclass",
-    description:
-      "Master the science of habits and build routines that stick. Over 7 powerful weeks, learn how to break limiting patterns and create systems that drive consistent results.",
-    start: "March 21st, 2026",
-    duration: "7 weeks",
-    link: "https://forms.gle/afGaqFpXdhBxqj8E7",
-    icon: <Calendar className="h-6 w-6" />,
-    closed: true,
-  },
-  {
     title: "Teens Leadership and Success Masterclass",
     description:
       "Transforming Today’s Teens into Tomorrow’s Leaders. The teenage years are among the most important years of life. This practical and life-changing program equips teenagers with the mindset, character, leadership skills, emotional intelligence, communication abilities, and success habits they need to thrive in every area of life. Based on The 7 Habits of Highly Effective Teens, this masterclass helps young people become confident, disciplined, purpose-driven, and prepared for the future.",
@@ -56,6 +36,26 @@ const masterclasses = [
     link: "https://forms.gle/Qfb54NysfRQWZzhm8",
     icon: <Users className="h-6 w-6" />,
     featured: true,
+  },
+  {
+    title: "Personal Growth Masterclass",
+    description:
+      "Unlock your full potential and design a life of purpose. This 8-week immersive journey will guide you through self-discovery, mindset shifts, and actionable strategies for lasting transformation.",
+    start: "March 7th, 2026",
+    duration: "8 weeks",
+    link: "https://forms.gle/Q5D8eQBB2hxf2LDHA",
+    icon: <Sparkles className="h-6 w-6" />,
+    closed: true,
+  },
+  {
+    title: "The Habit Mastery Masterclass",
+    description:
+      "Master the science of habits and build routines that stick. Over 7 powerful weeks, learn how to break limiting patterns and create systems that drive consistent results.",
+    start: "March 21st, 2026",
+    duration: "7 weeks",
+    link: "https://forms.gle/afGaqFpXdhBxqj8E7",
+    icon: <Calendar className="h-6 w-6" />,
+    closed: true,
   },
 ];
 
