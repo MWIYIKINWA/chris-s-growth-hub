@@ -85,7 +85,9 @@ const Index = () => {
           {masterclasses.map((mc) => (
             <div
               key={mc.title}
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg"
+              className={`group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg ${
+                mc.featured ? "md:col-span-2" : ""
+              } ${mc.closed ? "opacity-80" : ""}`}
             >
               <div>
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -94,9 +96,52 @@ const Index = () => {
                 <h3 className="mb-3 text-2xl font-semibold text-card-foreground">
                   {mc.title}
                 </h3>
+                {mc.closed && (
+                  <span className="mb-4 inline-block rounded-full bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    Registration Closed
+                  </span>
+                )}
                 <p className="mb-6 text-muted-foreground leading-relaxed">
                   {mc.description}
                 </p>
+                {mc.descriptionDetails && (
+                  <div className="mb-6">
+                    <p className="mb-2 font-semibold text-card-foreground">
+                      What Your Teen Will Learn
+                    </p>
+                    <ul className="grid gap-1.5 sm:grid-cols-2">
+                      {mc.descriptionDetails.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                        >
+                          <span className="text-primary">✔</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {mc.audience && (
+                  <div className="mb-6">
+                    <p className="mb-2 font-semibold text-card-foreground">
+                      Who Should Attend?
+                    </p>
+                    <ul className="mb-2 space-y-1 text-sm text-muted-foreground">
+                      {mc.audience.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <span className="text-primary">•</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {mc.closing && (
+                  <p className="mb-6 text-sm font-medium italic text-card-foreground">
+                    {mc.closing}
+                  </p>
+                )}
                 <div className="mb-8 flex flex-wrap gap-4 text-sm text-muted-foreground">
                   <span className="flex items-center gap-1.5">
                     <Calendar className="h-4 w-4 text-primary" />
@@ -108,15 +153,24 @@ const Index = () => {
                   </span>
                 </div>
               </div>
-              <a
-                href={mc.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-              >
-                Register Now
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              {mc.closed ? (
+                <button
+                  disabled
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-muted px-6 py-3 font-semibold text-muted-foreground cursor-not-allowed"
+                >
+                  Closed
+                </button>
+              ) : (
+                <a
+                  href={mc.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  Register Now
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              )}
             </div>
           ))}
         </div>
