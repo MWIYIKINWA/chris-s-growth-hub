@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Clock, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Sparkles, Users, Wallet, Award } from "lucide-react";
 
 const masterclasses = [
   {
@@ -38,7 +38,36 @@ const masterclasses = [
     featured: true,
   },
   {
+    title: "Leadership Masterclass",
+    description:
+      "Lead yourself, inspire others, impact the world. Become the leader you are called to be in this 6-week online program with Christopher Rubongoya, Leadership & Business Trainer.",
+    descriptionDetails: [
+      "Develop strong leadership skills",
+      "Lead teams with confidence",
+      "Make better decisions and create impact",
+      "Grow in influence, vision and purpose",
+    ],
+    detailsTitle: "What You Will Gain",
+    closing: "Invest in yourself. Lead the change.",
+    start: "Starts 29th August · Every Friday, 7:00PM – 8:30PM (EAT)",
+    duration: "6 weeks online",
+    fee: "UGX 250,000 (payable in 2 installments)",
+    link: "https://forms.gle/o2Lw96fwHyY5EQVT8",
+    icon: <Award className="h-6 w-6" />,
+  },
+  {
     title: "Personal Growth Masterclass",
+    description:
+      "Become the best version of yourself. A 7-week online program with Christopher Rubongoya focused on mindset, discipline and intentional growth.",
+    closing: "Become the best version of yourself.",
+    start: "Starts 22nd August, 2026 · 10:00AM – 11:00AM (EAT)",
+    duration: "7 weeks online",
+    fee: "UGX 250,000",
+    link: "https://forms.gle/3wgZM56dwoxKK5Zd9",
+    icon: <Sparkles className="h-6 w-6" />,
+  },
+  {
+    title: "Personal Growth Masterclass (March Cohort)",
     description:
       "Unlock your full potential and design a life of purpose. This 8-week immersive journey will guide you through self-discovery, mindset shifts, and actionable strategies for lasting transformation.",
     start: "March 7th, 2026",
@@ -82,9 +111,9 @@ const Index = () => {
           2026 Masterclasses
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
-          {masterclasses.map((mc) => (
+          {masterclasses.map((mc, i) => (
             <div
-              key={mc.title}
+              key={`${mc.title}-${i}`}
               className={`group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg ${
                 mc.featured ? "md:col-span-2" : ""
               } ${mc.closed ? "opacity-80" : ""}`}
@@ -107,7 +136,7 @@ const Index = () => {
                 {mc.descriptionDetails && (
                   <div className="mb-6">
                     <p className="mb-2 font-semibold text-card-foreground">
-                      What Your Teen Will Learn
+                      {mc.detailsTitle ?? "What Your Teen Will Learn"}
                     </p>
                     <ul className="grid gap-1.5 sm:grid-cols-2">
                       {mc.descriptionDetails.map((item) => (
@@ -151,6 +180,12 @@ const Index = () => {
                     <Clock className="h-4 w-4 text-primary" />
                     {mc.duration}
                   </span>
+                  {mc.fee && (
+                    <span className="flex items-center gap-1.5">
+                      <Wallet className="h-4 w-4 text-primary" />
+                      {mc.fee}
+                    </span>
+                  )}
                 </div>
               </div>
               {mc.closed ? (
