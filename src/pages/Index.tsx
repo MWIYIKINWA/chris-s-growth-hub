@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Clock, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Sparkles, Users, Wallet, Award } from "lucide-react";
 
 const masterclasses = [
   {
