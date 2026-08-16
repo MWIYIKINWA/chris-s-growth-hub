@@ -67,7 +67,7 @@ const masterclasses = [
     icon: <Sparkles className="h-6 w-6" />,
   },
   {
-    title: "Personal Growth Masterclass",
+    title: "Personal Growth Masterclass (March Cohort)",
     description:
       "Unlock your full potential and design a life of purpose. This 8-week immersive journey will guide you through self-discovery, mindset shifts, and actionable strategies for lasting transformation.",
     start: "March 7th, 2026",
