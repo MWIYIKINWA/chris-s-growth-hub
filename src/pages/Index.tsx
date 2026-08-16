@@ -66,26 +66,6 @@ const masterclasses = [
     link: "https://forms.gle/3wgZM56dwoxKK5Zd9",
     icon: <Sparkles className="h-6 w-6" />,
   },
-  {
-    title: "Personal Growth Masterclass (March Cohort)",
-    description:
-      "Unlock your full potential and design a life of purpose. This 8-week immersive journey will guide you through self-discovery, mindset shifts, and actionable strategies for lasting transformation.",
-    start: "March 7th, 2026",
-    duration: "8 weeks",
-    link: "https://forms.gle/Q5D8eQBB2hxf2LDHA",
-    icon: <Sparkles className="h-6 w-6" />,
-    closed: true,
-  },
-  {
-    title: "The Habit Mastery Masterclass",
-    description:
-      "Master the science of habits and build routines that stick. Over 7 powerful weeks, learn how to break limiting patterns and create systems that drive consistent results.",
-    start: "March 21st, 2026",
-    duration: "7 weeks",
-    link: "https://forms.gle/afGaqFpXdhBxqj8E7",
-    icon: <Calendar className="h-6 w-6" />,
-    closed: true,
-  },
 ];
 
 const Index = () => {
