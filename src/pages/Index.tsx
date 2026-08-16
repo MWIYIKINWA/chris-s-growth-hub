@@ -136,7 +136,7 @@ const Index = () => {
                 {mc.descriptionDetails && (
                   <div className="mb-6">
                     <p className="mb-2 font-semibold text-card-foreground">
-                      What Your Teen Will Learn
+                      {mc.detailsTitle ?? "What Your Teen Will Learn"}
                     </p>
                     <ul className="grid gap-1.5 sm:grid-cols-2">
                       {mc.descriptionDetails.map((item) => (
