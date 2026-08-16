@@ -180,6 +180,12 @@ const Index = () => {
                     <Clock className="h-4 w-4 text-primary" />
                     {mc.duration}
                   </span>
+                  {mc.fee && (
+                    <span className="flex items-center gap-1.5">
+                      <Wallet className="h-4 w-4 text-primary" />
+                      {mc.fee}
+                    </span>
+                  )}
                 </div>
               </div>
               {mc.closed ? (
