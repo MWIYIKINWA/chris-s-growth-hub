@@ -105,11 +105,6 @@ const Index = () => {
                 <h3 className="mb-3 text-2xl font-semibold text-card-foreground">
                   {mc.title}
                 </h3>
-                {mc.closed && (
-                  <span className="mb-4 inline-block rounded-full bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                    Registration Closed
-                  </span>
-                )}
                 <p className="mb-6 text-muted-foreground leading-relaxed">
                   {mc.description}
                 </p>
