@@ -163,24 +163,15 @@ const Index = () => {
                   )}
                 </div>
               </div>
-              {mc.closed ? (
-                <button
-                  disabled
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-muted px-6 py-3 font-semibold text-muted-foreground cursor-not-allowed"
-                >
-                  Closed
-                </button>
-              ) : (
-                <a
-                  href={mc.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  Register Now
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              )}
+              <a
+                href={mc.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-primary-foreground transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                Register Now
+                <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           ))}
         </div>
