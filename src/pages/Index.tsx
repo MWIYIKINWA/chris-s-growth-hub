@@ -96,7 +96,7 @@ const Index = () => {
               key={`${mc.title}-${i}`}
               className={`group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg ${
                 mc.featured ? "md:col-span-2" : ""
-              } ${mc.closed ? "opacity-80" : ""}`}
+              }`}
             >
               <div>
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
