@@ -1,4 +1,5 @@
-import { ArrowRight, Calendar, Clock, Sparkles, Users, Wallet, Award } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowRight, Calendar, Clock, Search, Sparkles, Users, Wallet, Award, X } from "lucide-react";
 
 const masterclasses = [
   {
@@ -69,6 +70,30 @@ const masterclasses = [
 ];
 
 const Index = () => {
+  const [query, setQuery] = useState("");
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return masterclasses;
+    return masterclasses.filter((mc) => {
+      const haystack = [
+        mc.title,
+        mc.description,
+        mc.closing,
+        mc.start,
+        mc.duration,
+        mc.fee,
+        mc.detailsTitle,
+        ...(mc.descriptionDetails ?? []),
+        ...(mc.audience ?? []),
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+      return haystack.includes(q);
+    });
+  }, [query]);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
@@ -87,11 +112,41 @@ const Index = () => {
 
       {/* Masterclass Cards */}
       <section className="mx-auto max-w-4xl px-6 pb-24">
-        <h2 className="mb-10 text-center text-3xl font-semibold text-foreground">
+        <h2 className="mb-6 text-center text-3xl font-semibold text-foreground">
           2026 Masterclasses
         </h2>
+        {/* Search */}
+        <div className="relative mx-auto mb-10 max-w-md">
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search masterclasses…"
+            aria-label="Search masterclasses"
+            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-10 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              aria-label="Clear search"
+              className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
+        </div>
+        {filtered.length === 0 ? (
+          <div className="py-16 text-center text-muted-foreground">
+            <p className="text-lg font-medium">No masterclasses found</p>
+            <p className="mt-1 text-sm">
+              Try a different search term.
+            </p>
+          </div>
+        ) : (
         <div className="grid gap-8 md:grid-cols-2">
-          {masterclasses.map((mc, i) => (
+          {filtered.map((mc, i) => (
             <div
               key={`${mc.title}-${i}`}
               className={`group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg ${
@@ -175,6 +230,7 @@ const Index = () => {
             </div>
           ))}
         </div>
+        )}
       </section>
 
       {/* Footer */}
