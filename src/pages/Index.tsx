@@ -111,9 +111,9 @@ const Index = () => {
           2026 Masterclasses
         </h2>
         <div className="grid gap-8 md:grid-cols-2">
-          {masterclasses.map((mc) => (
+          {masterclasses.map((mc, i) => (
             <div
-              key={mc.title}
+              key={`${mc.title}-${i}`}
               className={`group flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg ${
                 mc.featured ? "md:col-span-2" : ""
               } ${mc.closed ? "opacity-80" : ""}`}
